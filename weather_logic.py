@@ -458,7 +458,7 @@ class WeatherForecast:
         if hasattr(self.location, "lat") and hasattr(self.location, "lon"):
             url_location = "lat={lat}&lon={lon}".format(lat=self.location.lat, lon=self.location.lon)
         elif hasattr(self.location, "zipcode") and hasattr(self.location, "country"):
-            url_location = "zip={zip code},{country_code}".format(zip=self.location.zipcode, country_code=self.location.country)
+            url_location = "zip={zip_code},{country_code}".format(zip_code=self.location.zipcode, country_code=self.location.country)
         else:
             url_location = "q={city_name}".format(city_name=self.location.name)
         forecast_url = "http://api.openweathermap.org/data/2.5/forecast?{location}&APPID={api_key}&units={units}&lang=de".format(\
